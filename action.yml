@@ -12,7 +12,6 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - uses: actions/checkout@v2
     - run: echo Goodbye ${{ inputs.who-to-say-goodbye }}.
       shell: bash
     - id: random-number-generator
