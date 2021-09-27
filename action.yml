@@ -1,0 +1,19 @@
+name: 'Goodbye World'
+description: 'Say goodbye to someone'
+inputs:
+  who-to-say-goodbye:  # id of input
+    description: 'Who to say goodbye'
+    required: true
+    default: 'World'
+outputs:
+  random-number:
+    description: "Random number"
+    value: ${{ steps.random-number-generator.outputs.random-id }}
+runs:
+  using: "composite"
+  steps:
+    - run: echo Goodbye ${{ inputs.who-to-greet }}.
+      shell: bash
+    - id: random-number-generator
+      run: echo "::set-output name=random-id::$(echo $RANDOM)"
+      shell: bash
