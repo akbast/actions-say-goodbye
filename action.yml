@@ -12,7 +12,7 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - run: echo Goodbye ${{ inputs.who-to-greet }}.
+    - run: echo Goodbye ${{ inputs.who-to-say-goodbye }}.
       shell: bash
     - id: random-number-generator
       run: echo "::set-output name=random-id::$(echo $RANDOM)"
